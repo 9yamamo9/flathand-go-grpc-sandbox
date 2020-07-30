@@ -2,9 +2,10 @@
 
 
 [[projects]]
-  digest = "1:b32fff55ac1981dcd585dc0ecbf94f58aae01ce6698dd6496bb35cd66084f357"
+  digest = "1:dc2affb712e201fd6b4130f1c6d933753e70c0ad71775ed3d8c2e5d2c6921b28"
   name = "github.com/golang/protobuf"
   packages = [
+    "jsonpb",
     "proto",
     "protoc-gen-go/descriptor",
     "ptypes",
@@ -15,6 +16,51 @@
   pruneopts = "UT"
   revision = "d04d7b157bb510b1e0c10132224b616ac0e26b17"
   version = "v1.4.2"
+
+[[projects]]
+  digest = "1:e8eee4def27dd580a6c1faad3afe9549a7d8a0dc774d2eda0d0c2435c4a19853"
+  name = "github.com/grpc-ecosystem/go-grpc-middleware"
+  packages = [
+    ".",
+    "logging",
+    "logging/zap",
+    "logging/zap/ctxzap",
+    "tags",
+  ]
+  pruneopts = "UT"
+  revision = "3c51f7f332123e8be5a157c0802a228ac85bf9db"
+  version = "v1.2.0"
+
+[[projects]]
+  digest = "1:19525e48b45af69339bd7c2812137dbd1e650a78fc09c7c75482e307d51aa28d"
+  name = "go.uber.org/atomic"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "845920076a298bdb984fb0f1b86052e4ca0a281c"
+  version = "v1.6.0"
+
+[[projects]]
+  digest = "1:a23ddd39502ba94e2a72815a946d0edec801defcf0a0c0530d04acee1f455128"
+  name = "go.uber.org/multierr"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "b587143a48b62b01d337824eab43700af6ffe222"
+  version = "v1.5.0"
+
+[[projects]]
+  digest = "1:8e22fc6a99b3054c643f020c29a8e5c7809e75292b4960b26b60f717a201b6dc"
+  name = "go.uber.org/zap"
+  packages = [
+    ".",
+    "buffer",
+    "internal/bufferpool",
+    "internal/color",
+    "internal/exit",
+    "zapcore",
+  ]
+  pruneopts = "UT"
+  revision = "feeb9a050b31b40eec6f2470e7599eeeadfe5bdd"
+  version = "v1.15.0"
 
 [[projects]]
   branch = "master"
@@ -127,15 +173,17 @@
   version = "v1.30.0"
 
 [[projects]]
-  digest = "1:9df1b78c83a222d85523cd1033ae6755d0331488d09ae4ee83e5624c939452c8"
+  digest = "1:b3107d271d3bff18f236308ff60465a1072199cf003c2f8fdaa76c8a82acb563"
   name = "google.golang.org/protobuf"
   packages = [
+    "encoding/protojson",
     "encoding/prototext",
     "encoding/protowire",
     "internal/descfmt",
     "internal/descopts",
     "internal/detrand",
     "internal/encoding/defval",
+    "internal/encoding/json",
     "internal/encoding/messageset",
     "internal/encoding/tag",
     "internal/encoding/text",
@@ -171,6 +219,9 @@
   input-imports = [
     "github.com/golang/protobuf/proto",
     "github.com/golang/protobuf/ptypes/timestamp",
+    "github.com/grpc-ecosystem/go-grpc-middleware",
+    "github.com/grpc-ecosystem/go-grpc-middleware/logging/zap",
+    "go.uber.org/zap",
     "google.golang.org/grpc",
     "google.golang.org/grpc/codes",
     "google.golang.org/grpc/reflection",
